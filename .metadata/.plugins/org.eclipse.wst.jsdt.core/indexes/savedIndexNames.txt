@@ -1,7 +1,0 @@
-INDEX VERSION 1.4+C:\Users\sunhy\Documents\UNIV\3-2\CA\web\Project\who-is-my-pet-web\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-1970213423.index
-1706347209.index
-2229929867.index
-3129992851.index
-1001247073.index
-114566353.index
