@@ -38,7 +38,7 @@
 	PostDAO postDAO = new PostDAO();
 	int result = postDAO.postInfo(name, email, phoneNumber, webSite, description);
 	System.out.println("result"+result);
-	if(result == 5){
+	if(result == 1){
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("alert('DB로 정보 보내기 성공');");
