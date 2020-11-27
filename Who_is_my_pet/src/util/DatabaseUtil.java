@@ -9,7 +9,7 @@ public class DatabaseUtil {
 			String dbURL = "jdbc:mysql://db-who-is-my-pet.chhwpuwsmntx.ap-northeast-2.rds.amazonaws.com/mydb";
 			String dbID = "admin";
 			String dbPassword = "sun6910!Pet";
-			Class.forName("com.mysql.jdbc.Driver");
+			//Class.forName("com.mysql.jdbc.Driver");
 			return DriverManager.getConnection(dbURL, dbID, dbPassword);
 		}catch (Exception e){
 			e.printStackTrace();

@@ -37,6 +37,7 @@
 	}
 	PostDAO postDAO = new PostDAO();
 	int result = postDAO.postInfo(name, email, phoneNumber, webSite, description);
+	System.out.println("result"+result);
 	if(result == 5){
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
