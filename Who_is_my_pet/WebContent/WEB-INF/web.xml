@@ -25,4 +25,7 @@
     <param-name>DBTimeZone</param-name>
     <param-value>UTC</param-value>
   </context-param>
+  <listener>
+  	<listener-class>web.DBConnection</listener-class>
+  </listener>
 </web-app>
