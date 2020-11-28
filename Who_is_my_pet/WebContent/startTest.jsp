@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page errorPage="error/error.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +22,10 @@
 		<div class="body"></div>
 		<div class="tail"></div>
 	</div>
+	사용자들이 테스트 한 횟수:
+	<%
+	out.println(counter.Counter.getCount()); 
+	%>
 	<button class="start-button" onClick="location.href='testAnimal.html'">동물상 테스트 시작하기</button>
 </body>
 </html>

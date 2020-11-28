@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page errorPage="error/error.jsp" %>
 <%@ page import = "post.PostDTO" %>
 <%@ page import = "post.PostDAO" %>
 <%@ page import = "java.io.PrintWriter" %>
