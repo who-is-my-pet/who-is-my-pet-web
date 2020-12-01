@@ -22,10 +22,10 @@
 		<div class="body"></div>
 		<div class="tail"></div>
 	</div>
-	사용자들이 테스트 한 횟수:
+	현재까지 사이트 방문자 수:
 	<%
 	out.println(counter.Counter.getCount()); 
 	%>
-	<button class="start-button" onClick="location.href='testAnimal.html'">동물상 테스트 시작하기</button>
+	<button class="start-button" onClick="location.href='testAnimal.jsp'">동물상 테스트 시작하기</button>
 </body>
 </html>
