@@ -1,0 +1,142 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page errorPage="error/error.jsp"%>
+<%@ page import="animal.AnimalDTO"%>
+<%@ page import="animal.AnimalDAO"%>
+<%@ page import="java.io.PrintWriter"%>
+<%@ page import="java.util.ArrayList"%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>동물상 모아보기</title>
+<link rel="stylesheet" type="text/css" href="./css/reset.css" />
+<link rel="stylesheet" type="text/css" href="./css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="./css/style.css" />
+</head>
+<body>
+	<%
+		AnimalDAO animalDAO = new AnimalDAO();
+		ArrayList<AnimalDTO> list = animalDAO.getAnimalInfo();
+	%>
+	<!-- 전체영역 시작 -->
+	<div id="wrap">
+		<!-- 상단영역 시작 -->
+		<div id="header">
+			<div class="globalArea">
+				<a href="">Join</a> <a href="">Login</a> <a href="">MyPage</a> <a
+					href="">Home</a>
+			</div>
+			<div class="logoArea">
+				<h1>동물상 모아보기</h1>
+			</div>
+		</div>
+		<!-- 상단영역 끝 -->
+
+		<!-- 본문영역 시작 -->
+		<div id="content">
+			<div class="contentBoxgray">
+				<div class="boxTitle"></div>
+				<div class="leftBox">
+					<p>
+						<img src="img/dog3.png" alt="dog"
+							style="width: 400px; height: auto;">
+					</p>
+					<h4 class="title"><%=list.get(0).getName()%></h4>
+					<p class="info"><%=list.get(0).getDescription()%></p>
+				</div>
+				<div class="rightBox">
+					<p>
+						<img src="img/cat1.png" alt="cat"
+							style="width: 400px; height: auto;">
+					</p>
+					<h4 class="title"><%=list.get(1).getName()%></h4>
+					<p class="info"><%=list.get(1).getDescription()%></p>
+				</div>
+			</div>
+			<div class="contentBoxgray">
+				<div class="boxTitle"></div>
+				<div class="leftBox">
+					<p>
+						<img src="img/rabbit3.png" alt="rabbit"
+							style="width: 300px; height: auto;">
+					</p>
+					<h4 class="title"><%=list.get(2).getName()%></h4>
+					<p class="info"><%=list.get(2).getDescription()%></p>
+				</div>
+				<div class="rightBox">
+					<p>
+						<img src="img/dino2.png" alt="dino"
+							style="width: 400px; height: auto;">
+					</p>
+					<h4 class="title"><%=list.get(3).getName()%></h4>
+					<p class="info"><%=list.get(3).getDescription()%></p>
+				</div>
+			</div>
+			<div class="contentBoxgray">
+				<div class="boxTitle"></div>
+				<div class="leftBox">
+					<p>
+						<img src="img/fox3.png" alt="fox"
+							style="width: 400px; height: auto;">
+					</p>
+					<h4 class="title"><%=list.get(4).getName()%></h4>
+					<p class="info"><%=list.get(4).getDescription()%></p>
+				</div>
+				<div class="rightBox">
+					<p>
+						<img src="img/deer2.png" alt="deer"
+							style="width: 400px; height: auto;">
+					</p>
+					<h4 class="title"><%=list.get(5).getName()%></h4>
+					<p class="info"><%=list.get(5).getDescription()%></p>
+				</div>
+			</div>
+			<div class="contentBoxgray">
+				<div class="boxTitle"></div>
+				<div class="leftBox">
+					<p>
+						<img src="img/horse3.png" alt="horse"
+							style="width: 400px; height: auto;">
+					</p>
+					<h4 class="title"><%=list.get(6).getName()%></h4>
+					<p class="info"><%=list.get(6).getDescription()%></p>
+				</div>
+				<div class="rightBox">
+					<p>
+						<img src="img/frog1.png" alt="frog"
+							style="width: 300px; height: auto;">
+					</p>
+					<h4 class="title"><%=list.get(7).getName()%></h4>
+					<p class="info"><%=list.get(7).getDescription()%></p>
+				</div>
+			</div>
+			<div class="contentBoxgray">
+				<div class="boxTitle"></div>
+				<div class="leftBox">
+					<p>
+						<img src="img/bear1.png" alt="bear"
+							style="width: 400px; height: auto;">
+					</p>
+					<h4 class="title"><%=list.get(8).getName()%></h4>
+					<p class="info"><%=list.get(8).getDescription()%></p>
+				</div>
+				<div class="rightBox">
+					<p>
+						<img src="img/sloth.png" alt="sloth"
+							style="width: 400px; height: auto;">
+					</p>
+					<h4 class="title"><%=list.get(9).getName()%></h4>
+					<p class="info"><%=list.get(9).getDescription()%></p>
+				</div>
+			</div>
+		</div>
+		<!-- 본문영역 끝 -->
+
+		<!-- 하단영역 시작 -->
+		<div id="footer">Copyright (c) 2020 김하경 백선혜 유새연</div>
+		<!-- 하단영역 끝 -->
+	</div>
+	<!-- 전체영역 끝 -->
+</body>
+</html>

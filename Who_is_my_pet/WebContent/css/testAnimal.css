@@ -193,12 +193,12 @@ a.author{
 	font-size:40px;
 	position: absolute;
 	top: 50%;
-	left: 40%;
+	left: 50%;
 	border:none;
+	padding:2px;
 }
 
 /*testAnimal.html에서 사용*/
-  
   .file-upload {
     background-color: #ffffff;
     width: 600px;

@@ -1,0 +1,124 @@
+#wrap {
+    width: 1200px;
+    margin: 0px auto;
+}
+
+#header {
+	
+}
+#header .globalArea {
+	text-align: right;
+    padding-top: 10px;
+}
+#header .globalArea a {
+	text-decoration: none;
+    font-family: dotumche;
+    font-size: 12px;
+    padding: 0 5px;
+    color: #000000;
+}
+#header .logoArea {}
+#header .logoArea h1 {
+	text-align: center;
+    font-size: 70px;
+    font-weight: bold;
+	letter-spacing:10px;
+}
+#header .logoArea img {
+	width:72px;
+	height:60px;
+	backface-visibility: visible;
+	transform-origin: 50% 50% 0px;
+	transition: transform 5s;
+	transform: rotateY(2deg);
+	-webkit-transition: -webkit-transform 5s;
+}
+#header .logoArea img:hover {
+	backface-visibility: visible;
+	transform-origin: 50% 50% 0px;
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+}
+#header .menuArea {
+	height: 35px;
+    line-height: 35px;
+    border-top: 2px solid #ef0000;
+    border-bottom: 2px solid #ef0000;
+}
+#header .menuArea .mainMenu {}
+#header .menuArea .mainMenu li {
+	float: left;
+    width: 25%;
+    text-align: center;
+	letter-spacing:5px;
+}
+#header .menuArea .mainMenu li a {
+	text-decoration: none;
+    color: #000;
+}
+#header .menuArea .mainMenu li a:hover{
+background-color:#c5c3c3 ;
+}
+
+#content {
+	padding: 80px 0px 20px;
+}
+
+#content .contentBoxgray {
+	text-align: center;
+	padding: 26px;
+    border: 3px dashed #f9ece8;
+    margin-bottom: 30px;
+    background-color: #f7f3f3;
+}
+#content .contentBoxgray .boxTitle {
+    text-align: center;
+    margin-bottom: 50px;
+}
+#content .contentBoxgray h3 {
+	display: inline-block;
+    border-bottom: 3px double #000;
+    padding-bottom: 5px;
+	font-size: 25px;
+}
+#content .contentBoxgray .leftBox {
+	display: inline-block;
+    width: 540px;
+}
+#content .contentBoxgray .rightBox {
+	display: inline-block;
+    width: 540px;
+    margin-left: 52px;
+}
+#content .contentBoxgray .title {
+	font-size: 40px;
+	padding-top:10px;
+    padding-bottom: 10px;
+    color: #000000;
+	background-color:lightgray;
+	display:inline-block;
+	margin-top:20px;
+	margin-bottom:10px;
+}
+#content .contentBoxgray img:hover {
+	width: 100%;
+	opacity:0.4;
+}
+#content .contentBoxgray a img {}
+#content .contentBoxgray .info {
+	padding-top: 10px;
+    line-height: 25px;
+}
+
+#triangle{
+position:fixed;
+top:800px;
+right:12px;
+}
+
+#footer{
+	text-align: center;
+    border-top: 1px solid #000;
+    padding: 10px;
+    font-size: 12px;
+}
