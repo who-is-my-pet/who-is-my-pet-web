@@ -44,7 +44,7 @@
 				</button>
 			</div>
 		</div>
-		
+
 	</div>
 	<div id="label-container"></div>
 
@@ -100,6 +100,8 @@
         let model, webcam, labelContainer, maxPredictions;
         var data;
         var chart;
+        var animal_id;
+        var percentage
 
         // Load the image model 
         async function init() {
@@ -136,20 +138,23 @@
             
             console.log(animal_id);
             console.log(percentage);
+            
+            return [animal_id, percentage];
           } 
 
          // Load the Visualization API and the piechart package.
          google.charts.load('current', {'packages':['corechart']});
 
          // Set a callback to run when the Google Visualization API is loaded.
-         google.charts.setOnLoadCallback(drawChart);
+         setTimeout(() => {google.charts.setOnLoadCallback(drawChart)},10000);
+
 
          // Callback that creates and populates a data table,
          // instantiates the pie chart, passes in the data and
          // draws it.
         function drawChart() {
              var data = google.visualization.arrayToDataTable([
-                 ['동물상', '동물상', { role: 'style' }],
+                 ['className', 'probability', { role: 'style' }],
                  ['강아지상', 80.00, 'color: #FF0000'],
                  ['고양이상', 10.00, 'color: #01A9DB'],
                  ['토끼상', 10.00, 'color: #01A9DB'],
@@ -159,11 +164,17 @@
                  ['말상', 0, 'color: #8A4B08'],
 
               ]);
-             data.addRows([
-                 ['개구리상', 0, 'color: #ACFA58'],
-                 ['곰상', 0, 'color: #61380B'],
-                 ['나무늘보상', 0, 'color: #3B0B0B']
-               ]);
+             if(animal_id && percentage){
+            	 console.log("if문 안");
+                 console.log(animal_id);
+                 console.log(percentage);
+            	 data.addRows([
+                     [predict()[0], predict()[1], 'color: #ACFA58'],
+                     ['곰상', 0, 'color: #61380B'],
+                     ['나무늘보상', 0, 'color: #3B0B0B']
+                   ]);
+            	 
+             }
            // Set chart options
            var options = {'title':'',
                           'width':700,
@@ -201,7 +212,8 @@
     </script>
 	<!--Div that will hold the pie chart-->
 	<div style="width: 100%; text-align: center;">
-		<div id="chart_div" style="width: 400; height: 300; display: inline-block;"></div>
+		<div id="chart_div"
+			style="width: 400; height: 300; display: inline-block;"></div>
 	</div>
 	<button type="button" onclick="submitInfo()">짝 찾기 페이지로 이동</button>
 </body>
