@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import util.DatabaseUtil;
 public class AnimalDAO {
 	public ArrayList<AnimalDTO> getAnimalInfo() {
-		String SQL = "SELECT name, description from animal";
+		String SQL = "SELECT name, description, celebs from animal";
 		//조회 결과 여러개 담을 객체 
 		ArrayList<AnimalDTO> list = new ArrayList<AnimalDTO>();
 		ResultSet rs = null;

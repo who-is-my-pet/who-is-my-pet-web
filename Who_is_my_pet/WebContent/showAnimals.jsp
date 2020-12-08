@@ -44,6 +44,9 @@
 					</p>
 					<h4 class="title"><%=list.get(0).getName()%></h4>
 					<p class="info"><%=list.get(0).getDescription()%></p>
+					<p class="celeb">
+						<strong>대표 연예인: <%=list.get(0).getCelebs()%></strong>
+					</p>
 				</div>
 				<div class="rightBox">
 					<p>
@@ -52,6 +55,9 @@
 					</p>
 					<h4 class="title"><%=list.get(1).getName()%></h4>
 					<p class="info"><%=list.get(1).getDescription()%></p>
+					<p class="celeb">
+						<strong>대표 연예인: <%=list.get(1).getCelebs()%></strong>
+					</p>
 				</div>
 			</div>
 			<div class="contentBoxgray">
@@ -63,6 +69,9 @@
 					</p>
 					<h4 class="title"><%=list.get(2).getName()%></h4>
 					<p class="info"><%=list.get(2).getDescription()%></p>
+					<p class="celeb">
+						<strong>대표 연예인: <%=list.get(2).getCelebs()%></strong>
+					</p>
 				</div>
 				<div class="rightBox">
 					<p>
@@ -71,6 +80,9 @@
 					</p>
 					<h4 class="title"><%=list.get(3).getName()%></h4>
 					<p class="info"><%=list.get(3).getDescription()%></p>
+					<p class="celeb">
+						<strong>대표 연예인: <%=list.get(3).getCelebs()%></strong>
+					</p>
 				</div>
 			</div>
 			<div class="contentBoxgray">
@@ -82,6 +94,9 @@
 					</p>
 					<h4 class="title"><%=list.get(4).getName()%></h4>
 					<p class="info"><%=list.get(4).getDescription()%></p>
+					<p class="celeb">
+						<strong>대표 연예인: <%=list.get(4).getCelebs()%></strong>
+					</p>
 				</div>
 				<div class="rightBox">
 					<p>
@@ -90,6 +105,9 @@
 					</p>
 					<h4 class="title"><%=list.get(5).getName()%></h4>
 					<p class="info"><%=list.get(5).getDescription()%></p>
+					<p class="celeb">
+						<strong>대표 연예인: <%=list.get(5).getCelebs()%></strong>
+					</p>
 				</div>
 			</div>
 			<div class="contentBoxgray">
@@ -101,6 +119,9 @@
 					</p>
 					<h4 class="title"><%=list.get(6).getName()%></h4>
 					<p class="info"><%=list.get(6).getDescription()%></p>
+					<p class="celeb">
+						<strong>대표 연예인: <%=list.get(6).getCelebs()%></strong>
+					</p>
 				</div>
 				<div class="rightBox">
 					<p>
@@ -109,6 +130,9 @@
 					</p>
 					<h4 class="title"><%=list.get(7).getName()%></h4>
 					<p class="info"><%=list.get(7).getDescription()%></p>
+					<p class="celeb">
+						<strong>대표 연예인: <%=list.get(7).getCelebs()%></strong>
+					</p>
 				</div>
 			</div>
 			<div class="contentBoxgray">
@@ -120,6 +144,9 @@
 					</p>
 					<h4 class="title"><%=list.get(8).getName()%></h4>
 					<p class="info"><%=list.get(8).getDescription()%></p>
+					<p class="celeb">
+						<strong>대표 연예인: <%=list.get(8).getCelebs()%></strong>
+					</p>
 				</div>
 				<div class="rightBox">
 					<p>
@@ -128,6 +155,9 @@
 					</p>
 					<h4 class="title"><%=list.get(9).getName()%></h4>
 					<p class="info"><%=list.get(9).getDescription()%></p>
+					<p class="celeb">
+						<strong>대표 연예인: <%=list.get(9).getCelebs()%></strong>
+					</p>
 				</div>
 			</div>
 		</div>

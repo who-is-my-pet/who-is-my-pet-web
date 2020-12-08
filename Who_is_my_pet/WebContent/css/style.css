@@ -105,8 +105,10 @@ background-color:#c5c3c3 ;
 	opacity:0.4;
 }
 #content .contentBoxgray a img {}
+
 #content .contentBoxgray .info {
 	padding-top: 10px;
+	padding-bottom: 10px;
     line-height: 25px;
 }
 

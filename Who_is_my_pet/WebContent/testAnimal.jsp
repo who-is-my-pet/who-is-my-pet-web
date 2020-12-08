@@ -115,20 +115,34 @@
             // append elements to the DOM
             labelContainer = document.getElementById("label-container");
 
+            /*
             for (let i = 0; i < maxPredictions; i++) { // and class labels
                 labelContainer.appendChild(document.createElement("div"));
             }
+            */
         }
 
         async function predict() {
             // predict can take in an image, video or canvas html element
-            var image = document.getElementById("face-image")
+            var image = document.getElementById("face-image");
             const prediction = await model.predict(image, false);
             prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
             for (let i = 0; i < maxPredictions; i++) {
+            	/*
                 const classPrediction =
                     prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-                labelContainer.childNodes[i].innerHTML = classPrediction;
+                    */                 
+                //labelContainer.childNodes[i].innerHTML = classPrediction;
+                if(prediction[i].className=='Dog') prediction[i].className = '강아지상';
+                if(prediction[i].className=='Cat') prediction[i].className = '고양이상';
+                if(prediction[i].className=='Deer') prediction[i].className = '사슴상';
+                if(prediction[i].className=='Rabbit') prediction[i].className = '토끼상';
+                if(prediction[i].className=='Fox') prediction[i].className = '여우상';
+                if(prediction[i].className=='Frog') prediction[i].className = '개구리상';
+                if(prediction[i].className=='Horse') prediction[i].className = '말상';
+                if(prediction[i].className=='Sloth') prediction[i].className = '나무늘보상';
+                if(prediction[i].className=='Bear') prediction[i].className = '곰상';
+                if(prediction[i].className=='Dinosaur') prediction[i].className = '공룡상';
             }
             console.log(prediction[0].className);
             console.log(prediction[0].probability.toFixed(2));
@@ -139,6 +153,31 @@
             console.log(animal_id);
             console.log(percentage);
             
+            var data = google.visualization.arrayToDataTable([
+                ['className', '%', { role: 'style' }],
+                [prediction[0].className, (prediction[0].probability.toFixed(2))*100 ,'color: #FF0000'],
+                [prediction[1].className, (prediction[1].probability.toFixed(2))*100, 'color: #01A9DB'],
+                [prediction[2].className, (prediction[2].probability.toFixed(2))*100, 'color: #01A9DB'],
+                [prediction[3].className, (prediction[3].probability.toFixed(2))*100, 'color: #088A4B'],
+                [prediction[4].className, (prediction[4].probability.toFixed(2))*100, 'color: #F4FA58'],
+                [prediction[5].className, (prediction[5].probability.toFixed(2))*100, 'color: #FACC2E'],
+                [prediction[6].className, (prediction[6].probability.toFixed(2))*100, 'color: #ACFA58'],
+                [prediction[7].className, (prediction[7].probability.toFixed(2))*100, 'color: #ACFA58'],
+                [prediction[8].className, (prediction[8].probability.toFixed(2))*100, 'color: #61380B'],
+                [prediction[9].className, (prediction[9].probability.toFixed(2))*100, 'color: #61380B'],
+             ]);
+            
+            // Set chart options
+            var options = {'title':'인공지능이 분석한 결과 당신의 동물상은 ' +  prediction[0].className + ' 입니다!',
+                           'width':700,
+                           'height':500, 'is3D':true, 
+                           'backgroundColor':'#f9ece8',};
+
+            // Instantiate and draw our chart, passing in some options.
+            chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+            google.visualization.events.addListener(chart, 'select', selectHandler);
+            chart.draw(data, options);
+            
             return [animal_id, percentage];
           } 
 
@@ -146,46 +185,7 @@
          google.charts.load('current', {'packages':['corechart']});
 
          // Set a callback to run when the Google Visualization API is loaded.
-         setTimeout(() => {google.charts.setOnLoadCallback(drawChart)},10000);
-
-
-         // Callback that creates and populates a data table,
-         // instantiates the pie chart, passes in the data and
-         // draws it.
-        function drawChart() {
-             var data = google.visualization.arrayToDataTable([
-                 ['className', 'probability', { role: 'style' }],
-                 ['강아지상', 80.00, 'color: #FF0000'],
-                 ['고양이상', 10.00, 'color: #01A9DB'],
-                 ['토끼상', 10.00, 'color: #01A9DB'],
-                 ['공룡상', 0, 'color: #088A4B'],
-                 ['여우상', 0, 'color: #F4FA58'],
-                 ['사슴상', 0, 'color: #FACC2E'],
-                 ['말상', 0, 'color: #8A4B08'],
-
-              ]);
-             if(animal_id && percentage){
-            	 console.log("if문 안");
-                 console.log(animal_id);
-                 console.log(percentage);
-            	 data.addRows([
-                     [predict()[0], predict()[1], 'color: #ACFA58'],
-                     ['곰상', 0, 'color: #61380B'],
-                     ['나무늘보상', 0, 'color: #3B0B0B']
-                   ]);
-            	 
-             }
-           // Set chart options
-           var options = {'title':'',
-                          'width':700,
-                          'height':500, 'is3D':true, 
-                          'backgroundColor':'#f9ece8',};
-
-           // Instantiate and draw our chart, passing in some options.
-           chart = new google.visualization.BarChart(document.getElementById('chart_div'));
-           google.visualization.events.addListener(chart, 'select', selectHandler);
-           chart.draw(data, options);
-         }
+         setTimeout(() => {google.charts.setOnLoadCallback(predict)},10000);
 
         function selectHandler() {
            var selectedItem = chart.getSelection()[0];
@@ -202,7 +202,7 @@
 
             var hiddenField = document.createElement("input");
             hiddenField.setAttribute("type", "hidden");
-            hiddenField.setAttribute("name", "animal_id");
+            hiddenField.setAttribute("name", "animal_idx");
             hiddenField.setAttribute("value", animal_id);
             form.appendChild(hiddenField);
 
@@ -215,6 +215,6 @@
 		<div id="chart_div"
 			style="width: 400; height: 300; display: inline-block;"></div>
 	</div>
-	<button type="button" onclick="submitInfo()">짝 찾기 페이지로 이동</button>
+	<button type="button" onclick="submitInfo()">동물상 상세정보 보러가기</button>
 </body>
 </html>
