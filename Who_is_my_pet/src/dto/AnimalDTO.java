@@ -1,4 +1,4 @@
-package animal;
+package dto;
 
 public class AnimalDTO {
 	String name;

@@ -1,4 +1,4 @@
-package post;
+package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,7 +7,7 @@ import util.DatabaseUtil;
 
 public class PostDAO {
 	public int postInfo(String name, String email, String phoneNumber, String webSite, String description) {
-		String SQL = "INSERT INTO post (name, email, phoneNumber, webSite, description) VALUES(?,?,?,?,?)";
+		String SQL = "INSERT INTO post (name, email, contact, webSite, description) VALUES(?,?,?,?,?)";
 		try {
 			Connection conn = DatabaseUtil.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
