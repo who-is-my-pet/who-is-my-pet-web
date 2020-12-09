@@ -1,17 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page errorPage="error/error.jsp"%>
-<%@ page import="animal.AnimalDTO"%>
-<%@ page import="animal.AnimalDAO"%>
-<%@ page import="user_has_animal.UserAnimalDTO"%>
-<%@ page import="user_has_animal.UserAnimalDAO"%>
+<%@ page import="dto.AnimalDTO"%>
+<%@ page import="dao.AnimalDAO"%>
+<%@ page import="dto.UserAnimalDTO"%>
+<%@ page import="dao.UserAnimalDAO"%>
 <%@ page import="java.io.PrintWriter"%>
 <%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="css/testAnimal.css">
+<link rel="stylesheet" href="css/style.css">
 <title>나의 동물상 찾기</title>
 </head>
 <body>
@@ -57,9 +57,36 @@
 			script.close();
 			return;
 		}
+		/*
+				HttpSession session = request.getSession(false);
+				if(session==null){
+					session = request. getSession(); 
+				}
+				//세션의 속성 사용
+				String id = (String)session.getAttribute("id");
+				
+				String id = "";
+		
+		
+		
+				try{
+		
+				id = (String)session.getAttribute("id");            // request에서 id 파라미터를 가져온다
+		
+		
+		
+				if(id==null||id.equals(""){                            // id가 Null 이거나 없을 경우
+		
+				response.sendRedirect("loginform.jsp");    // 로그인 페이지로 리다이렉트 한다.
+				history.go(-1);                                    // 이전 페이지로 이동
+		
+				}
+		
+		*/
 		UserAnimalDAO userAnimalDAO = new UserAnimalDAO();
 		int result = userAnimalDAO.faceInfo(1, animal_idx);
 		System.out.println("result" + result);
+
 		if (result == 1) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
@@ -137,11 +164,12 @@
 	<%
 		}
 	%>
-	<div
-		style="text-align: center; font-size: 15px; color: #000; margin-top: 50px; margin-bottom: 10px">
-		닮은 연예인:
-		<%=list.get(animal_idx).getCelebs()%></div>
-	<div style="text-align: center; font-size: 15px; color: #000;"><%=list.get(animal_idx).getDescription()%></div>
-
+	<div style="padding: 25px;">
+		<div
+			style="text-align: center; font-size: 15px; color: #000; margin-top: 50px; margin-bottom: 10px">
+			닮은 연예인:
+			<%=list.get(animal_idx).getCelebs()%></div>
+		<div style="text-align: center; font-size: 15px; color: #000;"><%=list.get(animal_idx).getDescription()%></div>
+	</div>
 </body>
 </html>

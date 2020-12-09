@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page errorPage="error/error.jsp" %>
-<%@ page import = "post.PostDTO" %>
-<%@ page import = "post.PostDAO" %>
+<%@ page import = "dto.PostDTO" %>
+<%@ page import = "dao.PostDAO" %>
 <%@ page import = "java.io.PrintWriter" %>
 <%
 	request.setCharacterEncoding("UTF-8");
@@ -43,7 +43,7 @@
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("alert('DB로 정보 보내기 성공');");
-		script.println("location.href = 'post.html';");
+		script.println("location.href = 'postInfo.html';");
 		script.println("</script>");
 		script.close();
 		return;

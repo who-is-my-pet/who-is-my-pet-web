@@ -1,14 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page errorPage="error/error.jsp"%>
-<%@ page import="animal.AnimalDTO"%>
-<%@ page import="animal.AnimalDAO"%>
+<%@ page import="dto.AnimalDTO"%>
+<%@ page import="dao.AnimalDAO"%>
 <%@ page import="java.io.PrintWriter"%>
 <%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>동물상 모아보기</title>
 <link rel="stylesheet" type="text/css" href="./css/reset.css" />
 <link rel="stylesheet" type="text/css" href="./css/normalize.css" />
