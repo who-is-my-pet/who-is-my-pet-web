@@ -10,52 +10,69 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="./css/reset.css" />
+<link rel="stylesheet" type="text/css" href="./css/normalize.css" />
 <!--Load the AJAX API-->
 <script type="text/javascript"
 	src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 
 <body>
-	<div style="text-align: center; font-size: 40px; margin-top: 40px">나와
-		닮은 동물상 찾기</div>
-	<!--모델 업로드 버튼-->
-	<div style="margin-top: 40px; margin-bottom: 20px"></div>
-	<!--여기에 html 추가-->
-	<script class="jsbin"
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	<div class="file-upload">
-		<button class="file-upload-btn" type="button"
-			onclick="$('.file-upload-input').trigger( 'click' )">이미지
-			추가하기</button>
-
-		<div class="image-upload-wrap">
-			<input class="file-upload-input" type='file'
-				onchange="readURL(this);" accept="image/*" />
-			<div class="drag-text">
-				<h3>나의 사진을 불러와 주세요</h3>
+	<!-- 전체영역 시작 -->
+	<div id="wrap">
+		<!-- 상단영역 시작 -->
+		<div id="header">
+			<div class="globalArea">
+				<a href="">Join</a> <a href="">Login</a> <a href="">MyPage</a> <a
+					href="">Home</a>
 			</div>
+			<div class="logoArea"></div>
 		</div>
-		<div class="file-upload-content">
-			<img class="file-upload-image" id="face-image" src="#"
-				alt="your image" />
-			<div class="image-title-wrap">
-				<button type="button" onclick="removeUpload()" class="remove-image">
-					Remove <span class="image-title">Uploaded Image</span>
-				</button>
+		<!-- 상단영역 끝 -->
+
+		<!-- 본문영역 시작 -->
+		<div id="content">
+			<div style="text-align: center; font-size: 40px;">나와
+				닮은 동물상 찾기</div>
+			<!--모델 업로드 버튼-->
+			<div style="margin-top: 40px; margin-bottom: 20px"></div>
+			<!--여기에 html 추가-->
+			<script class="jsbin"
+				src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+			<div class="file-upload">
+				<button class="file-upload-btn" type="button"
+					onclick="$('.file-upload-input').trigger( 'click' )">이미지
+					추가하기</button>
+
+				<div class="image-upload-wrap">
+					<input class="file-upload-input" type='file'
+						onchange="readURL(this);" accept="image/*" />
+					<div class="drag-text">
+						<h3>나의 사진을 불러와 주세요</h3>
+					</div>
+				</div>
+				<div class="file-upload-content">
+					<img class="file-upload-image" id="face-image" src="#"
+						alt="your image" />
+					<div class="image-title-wrap">
+						<button type="button" onclick="removeUpload()"
+							class="remove-image">
+							Remove <span class="image-title">Uploaded Image</span>
+						</button>
+					</div>
+				</div>
+
 			</div>
-		</div>
+			<div id="label-container"></div>
 
-	</div>
-	<div id="label-container"></div>
-
-	<script type="text/javascript"
-		src="https://www.gstatic.com/charts/loader.js"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
-	<!--여기에 javascript 추가-->
-	<script type="text/javascript">
+			<script type="text/javascript"
+				src="https://www.gstatic.com/charts/loader.js"></script>
+			<script
+				src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+			<script
+				src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+			<!--여기에 javascript 추가-->
+			<script type="text/javascript">
         function readURL(input) {
             if (input.files && input.files[0]) {
 
@@ -93,7 +110,7 @@
             $('.image-upload-wrap').removeClass('image-dropping');
         });
     </script>
-	<script type="text/javascript">
+			<script type="text/javascript">
         // the link to your model provided by Teachable Machine export panel
         const URL = "https://teachablemachine.withgoogle.com/models/SIvIpcxO8/";
 
@@ -204,17 +221,21 @@
             hiddenField.setAttribute("type", "hidden");
             hiddenField.setAttribute("name", "animal_idx");
             hiddenField.setAttribute("value", animal_id);
-            form.appendChild(hiddenField);
-
+            form.appendChild(hiddenField);         
             document.body.appendChild(form);
             form.submit();
         }
     </script>
-	<!--Div that will hold the pie chart-->
-	<div style="width: 100%; text-align: center;">
-		<div id="chart_div"
-			style="width: 400; height: 300; display: inline-block;"></div>
+			<!--Div that will hold the pie chart-->
+			<div style="width: 100%; text-align: center;">
+				<div id="chart_div"
+					style="width: 400; height: 300; display: inline-block;"></div>
+			</div>
+			<button class="next-btn" type="button" onclick="submitInfo()">동물상 상세정보 보러가기</button>
+		</div>
+		<div></div>
+		<!-- 본문영역 끝 -->
 	</div>
-	<button type="button" onclick="submitInfo()">동물상 상세정보 보러가기</button>
+	<!-- 전체영역 끝 -->
 </body>
 </html>
