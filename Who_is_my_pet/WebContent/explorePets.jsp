@@ -5,6 +5,9 @@
 <%@ page import="dao.AnimalDAO"%>
 <%@ page import="java.io.PrintWriter"%>
 <%@ page import="java.util.ArrayList"%>
+<%
+	session.setAttribute("id", 1);
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -42,6 +45,7 @@
 					<p>
 						<img
 							src="https://animal-img.s3.ap-northeast-2.amazonaws.com/dog3.png"
+							onclick="location.href='/Who_is_my_pet/exploreLounge?id=1'"
 							alt="dog" style="width: 400px; height: auto;">
 					</p>
 					<h4 class="title"><%=list.get(0).getName()%></h4>
@@ -54,6 +58,7 @@
 					<p>
 						<img
 							src="https://animal-img.s3.ap-northeast-2.amazonaws.com/cat1.png"
+							onclick="location.href='/Who_is_my_pet/exploreLounge?id=2'"
 							alt="cat" style="width: 400px; height: auto;">
 					</p>
 					<h4 class="title"><%=list.get(1).getName()%></h4>
