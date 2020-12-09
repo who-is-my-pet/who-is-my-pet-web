@@ -1,4 +1,4 @@
-package user_has_animal;
+package dto;
 
 public class UserAnimalDTO {
 	int user_idx;

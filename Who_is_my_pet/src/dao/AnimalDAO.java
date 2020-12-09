@@ -1,9 +1,11 @@
-package animal;
+package dao;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import dto.AnimalDTO;
 import util.DatabaseUtil;
 public class AnimalDAO {
 	public ArrayList<AnimalDTO> getAnimalInfo() {

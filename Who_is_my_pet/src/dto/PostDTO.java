@@ -1,4 +1,4 @@
-package post;
+package dto;
 
 public class PostDTO {
 	String name;
